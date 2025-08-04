@@ -1,0 +1,185 @@
+🔸 Exercice 1 – Grille responsive simple
+But : créer 3 colonnes sur desktop, 2 sur tablette, 1 sur mobile.
+
+html
+Copier
+Modifier
+<div class="grid">
+  <div>Colonne 1</div>
+  <div>Colonne 2</div>
+  <div>Colonne 3</div>
+</div>
+css
+Copier
+Modifier
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+🔸 Exercice 2 – En-tête responsive
+Logo à gauche
+
+Menu à droite (horizontal sur PC, caché ou vertical sur mobile)
+
+🔸 Exercice 3 – Texte adaptatif
+Un paragraphe qui change de taille en fonction de la largeur d’écran
+
+font-size: clamp(1rem, 2vw, 2rem);
+
+
+
+A. Notions à enseigner
+Transition CSS :
+
+css
+Copier
+Modifier
+transition: all 0.3s ease-in-out;
+Effets sur hover :
+
+transform: scale(), translateY()
+
+background-color, color
+
+Animation CSS :
+
+@keyframes
+
+animation-name, animation-duration, etc.
+
+🧪 Exercices
+🔸 Exercice 1 – Bouton animé au survol
+html
+Copier
+Modifier
+<button class="btn">Clique-moi</button>
+css
+Copier
+Modifier
+.btn {
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: darkblue;
+}
+🔸 Exercice 2 – Carte qui glisse au hover
+css
+Copier
+Modifier
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+🔸 Exercice 3 – Animation d’apparition
+css
+Copier
+Modifier
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+Appliquer .fade-in sur des paragraphes ou des titres.
+
+
+✅ ÉTAPE 7 : Formulaires (inputs, labels, boutons)
+🎯 Objectif :
+Créer des formulaires HTML stylisés en CSS.
+
+🔹 A. Notions à enseigner
+Structure HTML d’un formulaire :
+
+html
+Copier
+Modifier
+<form>
+  <label for="nom">Nom :</label>
+  <input type="text" id="nom" name="nom">
+</form>
+Types de champs :
+
+text, email, password, radio, checkbox, submit, textarea, select
+
+Styles utiles :
+
+padding, border, outline, focus
+
+display: block, margin-bottom
+
+🧪 Exercices
+🔸 Exercice 1 – Formulaire de contact simple
+Champs :
+
+Nom
+
+Email
+
+Message (textarea)
+
+Bouton "Envoyer"
+
+Ajoutez du style :
+
+css
+Copier
+Modifier
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+input:focus, textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+🔸 Exercice 2 – Choix avec boutons radio et checkbox
+html
+Copier
+Modifier
+<p>Quel est votre langage préféré ?</p>
+<input type="radio" name="langage" value="html"> HTML
+<input type="radio" name="langage" value="css"> CSS
+<input type="radio" name="langage" value="js"> JS
+Ajouter une case "J’accepte les conditions" (checkbox)
+
+🔸 Exercice 3 – Formulaire complet stylisé
+Créer un formulaire d’inscription :
+
+Nom, prénom
+
+Email
+
+Mot de passe
+
+Confirmation
+
+Bouton d’envoi
+
+Styliser le tout pour qu’il soit élégant et responsive.
